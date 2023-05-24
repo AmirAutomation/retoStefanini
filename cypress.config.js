@@ -29,12 +29,23 @@ async function setupNodeEvents(on, config) {
       },
     })
   );
-
+  require('cypress-mochawesome-reporter/plugin')(on);
   // Make sure to return the config object as it might have been modified by the plugin.
   return config;
 }
 
 module.exports = defineConfig({
+
+  screenshotOnRunFailure: true,
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportDir: "cypress/report",
+    reportPageTitle: 'Gestion de usuarios',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
   e2e: {
     baseUrl: "https://cadastro-de-usuarios.s3.us-east-1.amazonaws.com/index.html",
     specPattern: "**/*.feature",
