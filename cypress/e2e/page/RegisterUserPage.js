@@ -41,7 +41,7 @@ export class RegisterUserPage {
         datatable.hashes().forEach(element =>{
             cy.get(this.table).contains(element.validationName)
             cy.get(this.table).contains(element.validationEmail)
-
+            cy.screenshot()
         })
 
     }
@@ -56,7 +56,7 @@ export class RegisterUserPage {
         cy.get(this.messageError).eq(2).should("be.visible").and("contain", "O campo Senha é obrigatório.")
 
         this.validateFieldsForm()
-
+        cy.screenshot()
     }
 
     registrationUserIncompleteName(datatable){
@@ -79,7 +79,7 @@ export class RegisterUserPage {
             cy.get(this.tableTitle).should("not.exist")
 
         })
-
+        cy.screenshot()
 
     }
 
@@ -98,7 +98,7 @@ export class RegisterUserPage {
             cy.get(this.messageError).eq(0).should("be.visible").and("contain", element.messageValidation)
             cy.get(this.tableTitle).should("not.exist")
         })
-
+        cy.screenshot()
 
     }
 
@@ -116,6 +116,8 @@ export class RegisterUserPage {
             cy.get(this.messageError).eq(0).should("be.visible").and("contain", element.messageValidation)
             cy.get(this.tableTitle).should("not.exist")
         })
+        
+        cy.screenshot()
     }
 
     deleteUser(){
@@ -126,7 +128,7 @@ export class RegisterUserPage {
         datatable.hashes().forEach(element =>{ 
             this.validateFieldsForm()
         })
-
+        cy.screenshot()
     }
 
 }export const registerUserPage = new RegisterUserPage()
