@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "cy.open": "cypress open",
-    "cy.test": "cypress run"
+    "cy.test": "cypress run",
+    "run-allure": "npx cypress run --env allure=true,allureResultsPath=cypress/allure_results",
+    "allure-report": "allure generate cypress/allure_results --clean -o cypress/allure-report"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "node": "^20.2.0"
   },
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.39.1",
     "prettier": "^2.8.8"
   },
   "cypress-cucumber-preprocessor": {
