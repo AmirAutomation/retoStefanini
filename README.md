@@ -16,6 +16,15 @@ cypress/screenshots
 
 * **"Allure reporter":** los reportes los podemos encontrar en la rama report-allure, para poder visualizar el html se debe tener abierto el servidor de Allure
 
+### Reporte html
+```bash
+ npm run run-allure
+ npm run allure-report
+ cd cypress
+ allure open
+```
+El comando allure open abrira el reporte html en el navewgador predeterminado
+
 ## Herramientas
 
 - Cypress 
