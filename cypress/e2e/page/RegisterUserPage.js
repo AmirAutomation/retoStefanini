@@ -51,9 +51,9 @@ export class RegisterUserPage {
     }
 
     validateFieldsEmpty(){
-        cy.get(this.messageError).eq(6).should("be.visible").and("contain", "O campo Nome é obrigatório.")
-        cy.get(this.messageError).eq(76).should("be.visible").and("contain", "O campo E-mail é obrigatório.")
-        cy.get(this.messageError).eq(78).should("be.visible").and("contain", "O campo Senha é obrigatório.")
+        cy.get(this.messageError).eq(0).should("be.visible").and("contain", "O campo Nome é obrigatório.")
+        cy.get(this.messageError).eq(1).should("be.visible").and("contain", "O campo E-mail é obrigatório.")
+        cy.get(this.messageError).eq(2).should("be.visible").and("contain", "O campo Senha é obrigatório.")
 
         this.validateFieldsForm()
 
