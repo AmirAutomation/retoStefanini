@@ -7,9 +7,6 @@ const {
 } = require("@badeball/cypress-cucumber-preprocessor")
 const { registerUserPage } = require("../../e2e/page/RegisterUserPage")
 
-before(()=>{
-
-})
     Given('que estoy en el sito web de registro', ()=>{
         
         cy.visit("https://cadastro-de-usuarios.s3.us-east-1.amazonaws.com/index.html", {failOnStatusCode: false})
